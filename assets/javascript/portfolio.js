@@ -93,7 +93,7 @@ $(document).ready(() => {
     app.shouldIgnoreVideo = true;
   }
 
-  app.titleChanger(['Best', 'Ragers', 'In', 'North', 'America', '=', 'omegatm.wtf', 'Song name: Day & Night']);
+  app.titleChanger(['Best', 'Ragers', 'In', 'North', 'America', '=', 'omegatm.wtf', 'Song name: Pink Floyd']);
   app.iconChanger(['assets/icons/roses/rose1.jpg', 'assets/icons/roses/rose2.jpg', 'assets/icons/roses/rose3.jpg', 'assets/icons/roses/rose4.jpg', 'assets/icons/roses/rose5.jpg', 'assets/icons/roses/rose6.jpg', 'assets/icons/roses/rose7.jpg', 'assets/icons/roses/rose8.jpg', 'assets/icons/roses/rose1.jpg']);
 });
 
