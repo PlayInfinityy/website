@@ -8,75 +8,108 @@ const mobileAndTabletCheck = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IE
 
 $(document).ready(() => {
   const links = [
+ Certainly! Here’s the updated list with the new names added:
+
+```json
+[
   {
-    name: 'Omega',
-    link: '',
-  },
-  {
-    name: 'Keaton',
-    link: '',
-  },
-  {
-    name: 'Casper',
-    link: '',
+    "name": "Omega",
+    "link": ""
   },
   {
-    name: 'Cryx',
-    link: '',
+    "name": "Keaton",
+    "link": ""
   },
   {
-    name: 'Crspy',
-    link: '',
+    "name": "Casper",
+    "link": ""
   },
   {
-    name: 'Paradox',
-    link: '',
+    "name": "Cryx",
+    "link": ""
   },
   {
-    name: 'API',
-    link: '',
+    "name": "Crspy",
+    "link": ""
   },
   {
-    name: 'd',
-    link: '',
+    "name": "Paradox",
+    "link": ""
   },
   {
-    name: 'Solar',
-    link: '',
+    "name": "API",
+    "link": ""
   },
   {
-    name: 'Battleye',
-    link: '',
+    "name": "d",
+    "link": ""
   },
   {
-    name: 'Panda',
-    link: '',
-   },
+    "name": "Solar",
+    "link": ""
+  },
   {
-    name: 'Luvly',
-    link: '',
+    "name": "Battleye",
+    "link": ""
   },
-   {
-    name: 'Kimbo',
-    link: '',
+  {
+    "name": "Panda",
+    "link": ""
   },
-   {
-    name: 'Zix',
-    link: '',
+  {
+    "name": "Luvly",
+    "link": ""
   },
-   {
-    name: 'Frosty',
-    link: '',
+  {
+    "name": "Kimbo",
+    "link": ""
   },
-   {
-    name: 'Gunky',
-    link: '',
+  {
+    "name": "Zix",
+    "link": ""
   },
-  {   
-    name: '❤️ Ting  ❤️',
-    link: '',
-    },
-];
+  {
+    "name": "TBH",
+    "link": ""
+  },
+  {
+    "name": "Gunky",
+    "link": ""
+  },
+  {
+    "name": "❤️ Ting ❤️",
+    "link": ""
+  },
+  {
+    "name": "Eli",
+    "link": ""
+  },
+  {
+    "name": "Blacky",
+    "link": ""
+  },
+  {
+    "name": "Pookie",
+    "link": ""
+  },
+  {
+    "name": "HaleTM",
+    "link": ""
+  },
+  {
+    "name": "eelipse",
+    "link": ""
+  },
+  {
+    "name": "curqsd",
+    "link": ""
+  },
+  {
+    "name": "J.D",
+    "link": ""
+  }
+]
+```
   for (let i in links) {
     let link = links[i];
 
