@@ -8,108 +8,75 @@ const mobileAndTabletCheck = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IE
 
 $(document).ready(() => {
   const links = [
- Certainly! Here’s the updated list with the new names added:
-
-```json
-[
   {
-    "name": "Omega",
-    "link": ""
+    name: 'Omega',
+    link: '',
   },
   {
-    "name": "Keaton",
-    "link": ""
+    name: 'Keaton',
+    link: '',
   },
   {
-    "name": "Casper",
-    "link": ""
+    name: 'Casper',
+    link: '',
   },
   {
-    "name": "Cryx",
-    "link": ""
+    name: 'Cryx',
+    link: '',
   },
   {
-    "name": "Crspy",
-    "link": ""
+    name: 'Crspy',
+    link: '',
   },
   {
-    "name": "Paradox",
-    "link": ""
+    name: 'Paradox',
+    link: '',
   },
   {
-    "name": "API",
-    "link": ""
+    name: 'API',
+    link: '',
   },
   {
-    "name": "d",
-    "link": ""
+    name: 'd',
+    link: '',
   },
   {
-    "name": "Solar",
-    "link": ""
+    name: 'Solar',
+    link: '',
   },
   {
-    "name": "Battleye",
-    "link": ""
+    name: 'Battleye',
+    link: '',
   },
   {
-    "name": "Panda",
-    "link": ""
-  },
+    name: 'Panda',
+    link: '',
+   },
   {
-    "name": "Luvly",
-    "link": ""
+    name: 'Luvly',
+    link: '',
   },
-  {
-    "name": "Kimbo",
-    "link": ""
+   {
+    name: 'Kimbo',
+    link: '',
   },
-  {
-    "name": "Zix",
-    "link": ""
+   {
+    name: 'Zix',
+    link: '',
   },
-  {
-    "name": "TBH",
-    "link": ""
+   {
+    name: 'Frosty',
+    link: '',
   },
-  {
-    "name": "Gunky",
-    "link": ""
+   {
+    name: 'Gunky',
+    link: '',
   },
-  {
-    "name": "❤️ Ting ❤️",
-    "link": ""
-  },
-  {
-    "name": "Eli",
-    "link": ""
-  },
-  {
-    "name": "Blacky",
-    "link": ""
-  },
-  {
-    "name": "Pookie",
-    "link": ""
-  },
-  {
-    "name": "HaleTM",
-    "link": ""
-  },
-  {
-    "name": "eelipse",
-    "link": ""
-  },
-  {
-    "name": "curqsd",
-    "link": ""
-  },
-  {
-    "name": "J.D",
-    "link": ""
-  }
-]
-```
+  {   
+    name: '❤️ Ting  ❤️',
+    link: '',
+    },
+];
   for (let i in links) {
     let link = links[i];
 
@@ -126,7 +93,7 @@ $(document).ready(() => {
     app.shouldIgnoreVideo = true;
   }
 
-  app.titleChanger(['Best', 'Ragers', 'In', 'North', 'America', '=', 'omegatm.wtf', 'Song name: Pink Floyd']);
+  app.titleChanger(['Best', 'Ragers', 'In', 'North', 'America', '=', 'omegatm.wtf', 'Song name: Day & Night']);
   app.iconChanger(['assets/icons/roses/rose1.jpg', 'assets/icons/roses/rose2.jpg', 'assets/icons/roses/rose3.jpg', 'assets/icons/roses/rose4.jpg', 'assets/icons/roses/rose5.jpg', 'assets/icons/roses/rose6.jpg', 'assets/icons/roses/rose7.jpg', 'assets/icons/roses/rose8.jpg', 'assets/icons/roses/rose1.jpg']);
 });
 
