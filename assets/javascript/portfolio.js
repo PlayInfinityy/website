@@ -1,6 +1,6 @@
 'use strict';
 
-const ipgeolocation = 'https://api.ipgeolocation.io/ipgeo?apiKey=0b3ba7201f9d4cd8827db0d38aa036d6';
+const ipgeolocation = '';
 
 const timeouts = [];
 
