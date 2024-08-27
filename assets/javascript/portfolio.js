@@ -15,7 +15,7 @@ $(document).ready(() => {
   {
     "name": "Net".
     "link": ""
-  }.
+  },
   {
     "name": "Keaton",
     "link": ""
