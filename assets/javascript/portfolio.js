@@ -12,16 +12,11 @@ $(document).ready(() => {
     "name": "Omega",
     "link": ""
   },
-  {
-    "name": "Net".
-    "link": ""
-  },
-  {
     "name": "Keaton",
     "link": ""
   },
   {
-    "name": "Casper",
+    "name": "Net",
     "link": ""
   },
   {
