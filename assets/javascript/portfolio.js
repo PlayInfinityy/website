@@ -16,10 +16,6 @@ $(document).ready(() => {
     "link": ""
   },
   {
-    "name": "Net",
-    "link": ""
-  },
-  {
     "name": "Cryx",
     "link": ""
   },
