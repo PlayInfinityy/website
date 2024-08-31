@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>omegatm.wtf</title>
+    <title>The Gang</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="omegatm.wtf - omegatm.wtf" />
-    <meta name="keywords" content="omegatm.wtf, omegatm.wtf, club, r6, rust, hvh" />
+    <meta name="description" content="The Gang - omegatm.wtf" />
+    <meta name="keywords" content="omegatm.wtf, the gang, club, r6, rust, hvh" />
     <meta name="author" content="Omega" />
     <meta property="og:type" content="site" />
-    <meta property="og:title" content="omegatm.wtf" />
-    <meta property="og:description" content="omegatm.wtf - hack vs hack team" />
+    <meta property="og:title" content="The Gang" />
+    <meta property="og:description" content="The Gang - hack vs hack team" />
     <meta property="og:url" content="https://klar.gg" />
     <meta property="og:image" content="assets/icons/obnoxious.jpg" />
-    <meta itemprop="name" content="omegatm.wtf" />
-    <meta itemprop="description" content="omegatm.wtf - hack vs hack team" />
+    <meta itemprop="name" content="The Gang" />
+    <meta itemprop="description" content="The Gang - hack vs hack team" />
     <meta itemprop="image" content="assets/icons/obnoxious.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
@@ -36,6 +36,25 @@
 
                 .header a:hover {
                     background-color: transparent;
+                    transform: scale(1.1);
+                }
+
+        .profile-pictures {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+            .profile-pictures img {
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                transition: transform 0.3s;
+            }
+
+                .profile-pictures img:hover {
                     transform: scale(1.1);
                 }
     </style>
@@ -77,10 +96,6 @@
         <p><span id="brand"></span></p>
     </div>
 
-    <div class="marquee-container" style="visibility: hidden;">
-        <pre>|<div id="marquee"></div>|</pre>
-    </div>
-
     <div class="background" style="display: none;">
         <div id="pattern"></div>
 
@@ -105,8 +120,11 @@
         </video>
     </div>
 
-    <div class="top-right">
-        <i><a class="skip">skip intro</a></i>
+    <div class="profile-pictures">
+        <img src="assets/images/profile1.jpg" alt="Profile 1">
+        <img src="assets/images/profile2.jpg" alt="Profile 2">
+        <img src="assets/images/profile3.jpg" alt="Profile 3">
+        <img src="assets/images/profile4.jpg" alt="Profile 4">
     </div>
 
     <div class="footer">
