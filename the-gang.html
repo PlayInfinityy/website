@@ -4,7 +4,7 @@
     <title>The Gang</title>
     <meta charset="UTF-8" />
     <meta name="description" content="The Gang - omegatm.wtf" />
-    <meta name="keywords" content="omegatm.wtf, the gang, club, r6, rust, hvh" />
+    <meta name="keywords" content="omegatm.wtf, gang, club, r6, rust, hvh" />
     <meta name="author" content="Omega" />
     <meta property="og:type" content="site" />
     <meta property="og:title" content="The Gang" />
@@ -22,7 +22,7 @@
     <style>
         .header {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             background-color: transparent;
             padding: 10px 0;
         }
@@ -39,97 +39,124 @@
                     transform: scale(1.1);
                 }
 
-        .profile-pictures {
+        .gang-container {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
             padding: 20px;
         }
 
-            .profile-pictures img {
+        .gang-member {
+            text-align: center;
+        }
+
+            .gang-member img {
+                width: 150px;
+                height: 150px;
                 border-radius: 50%;
-                width: 100px;
-                height: 100px;
-                transition: transform 0.3s;
+                margin-bottom: 10px;
             }
 
-                .profile-pictures img:hover {
-                    transform: scale(1.1);
-                }
+        .rainbow-text {
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: rainbow 1s infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .top-member {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .top-member img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(10px);
+        }
+
+            .background video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
     </style>
 </head>
 
 <body>
     <div class="header">
         <a href="index.html">Home</a>
-        <a href="the-gang.html">The Gang</a>
-        <a href="another-page.html">Another Page</a>
     </div>
 
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-
-    <div id="main">
-        <table class="box">
-            <tbody>
-                <tr>
-                    <td><span id="line1" style="white-space: pre;"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="line2" style="white-space: pre;"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="line3 space" style="white-space: pre;"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="line4" style="white-space: pre;"></span></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="top-member">
+        <img src="assets/images/omega.png" alt="OG">
+        <div class="rainbow-text">OmegaTM</div>
     </div>
 
-    <div class="container" style="display: none;">
-        <h1 class="brand-header">
-            <a href="https://klar.gg" target="_BLANK">Klar</a>
-        </h1>
-
-        <p><span id="brand"></span></p>
+    <div class="gang-container">
+        <div class="gang-member">
+            <img src="assets/images/kimbo.png" alt="1">
+            <div class="rainbow-text">Bimboington</div>
+        </div>
+        <div class="gang-member">
+            <img src="assets/images/zix.png" alt="2">
+            <div class="rainbow-text">Zoinksington</div>
+        </div>
+        <div class="gang-member">
+            <img src="assets/images/frosty.png" alt="3">
+            <div class="rainbow-text">Frostyington</div>
+        </div>
+        <div class="gang-member">
+            <img src="assets/images/angel.jfif" alt="4">
+            <div class="rainbow-text">Angel</div>
+        </div>
+        <div class="gang-member">
+            <img src="assets/images/cami.gif" alt="5">
+            <div class="rainbow-text">Cami</div>
+        </div>
+        <div class="gang-member">
+            <img src="assets/images/spoit.gif" alt="6">
+            <div class="rainbow-text">SpittyKittyington</div>
+        </div>
+        <div class="gang-member">
+            <img src="assets/images/solo.png" alt="7">
+            <div class="rainbow-text">Sololyaington</div>
+        </div>
     </div>
 
-    <div class="background" style="display: none;">
-        <div id="pattern"></div>
-
-        <audio id="audio" loop="">
-            <source src="assets/others/dayandnight.mp3" type="audio/mp3" />
-            <script>
-                const audio = document.getElementById('audio');
-
-                app.audioElement = audio;
-                app.audioElement.volume = 0;
-            </script>
-        </audio>
-
-        <video id="background" loop="">
+    <div class="background">
+        <video id="background" loop autoplay muted>
             <source src="assets/others/klar.mp4" type="video/mp4" />
-            <script>
-                const video = document.getElementById('background');
-
-                app.videoElement = video;
-                app.videoElement.volume = 0;
-            </script>
         </video>
     </div>
 
-    <div class="profile-pictures">
-        <img src="assets/images/profile1.jpg" alt="Profile 1">
-        <img src="assets/images/profile2.jpg" alt="Profile 2">
-        <img src="assets/images/profile3.jpg" alt="Profile 3">
-        <img src="assets/images/profile4.jpg" alt="Profile 4">
-    </div>
-
-    <div class="footer">
-        <i><a href="https://discordapp.com/invite/klargg" target="_BLANK">Discord server</a></i>
-    </div>
+    <audio id="audio" loop>
+        <source src="assets/others/dayandnight.mp3" type="audio/mp3" />
+    </audio>
 
     <script type="text/javascript" src="assets/javascript/lib/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="assets/javascript/lib/jquery.marquee.min.js"></script>
@@ -137,5 +164,17 @@
     <script type="text/javascript" src="assets/javascript/lib/typed.min.js"></script>
     <script type="text/javascript" src="assets/javascript/portfolio.js"></script>
     <script type="text/javascript" src="assets/javascript/analytics.js"></script>
+    <script>
+        $(document).ready(() => {
+            const audio = document.getElementById('audio');
+            const video = document.getElementById('background');
+            audio.volume = 0.12;
+            video.play();
+            audio.play();
+            video.addEventListener('timeupdate', () => {
+                $.cookie('videoTime', video.currentTime, { expires: 1 });
+            }, false);
+        });
+    </script>
 </body>
 </html>
