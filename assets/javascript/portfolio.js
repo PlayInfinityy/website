@@ -15,35 +15,15 @@ $(document).ready(() => {
             "link": ""
         },
         {
+            "name": "Net",
+            "link": ""
+        },
+        {
             "name": "Keaton",
             "link": ""
         },
         {
-            "name": "Cryx",
-            "link": ""
-        },
-        {
-            "name": "Crspy",
-            "link": ""
-        },
-        {
-            "name": "Paradox",
-            "link": ""
-        },
-        {
-            "name": "API",
-            "link": ""
-        },
-        {
-            "name": "d",
-            "link": ""
-        },
-        {
-            "name": "Solar",
-            "link": ""
-        },
-        {
-            "name": "Battleye",
+            "name": "Casper",
             "link": ""
         },
         {
@@ -51,43 +31,43 @@ $(document).ready(() => {
             "link": ""
         },
         {
-            "name": "Luvly",
+            "name": "JD",
             "link": ""
         },
         {
-            "name": "Kimbo",
+            "name": "Draggo",
             "link": ""
         },
         {
-            "name": "Zix",
+            "name": "Crspy",
             "link": ""
         },
         {
-            "name": "Frosty",
+            "name": "Cam",
             "link": ""
         },
         {
-            "name": "Gunky",
+            "name": "Blackie",
             "link": ""
         },
         {
-            "name": "❤️ Ting ❤️",
+            "name": "Battleye",
             "link": ""
         },
         {
-            "name": "Eli",
+            "name": "Api",
             "link": ""
         },
         {
-            "name": "Blacky",
+            "name": "",
+            "link": ""
+        },
+        {
+            "name": "Solar",
             "link": ""
         },
         {
             "name": "Pookie",
-            "link": ""
-        },
-        {
-            "name": "HaleTM",
             "link": ""
         },
         {
@@ -99,7 +79,27 @@ $(document).ready(() => {
             "link": ""
         },
         {
-            "name": "J.D",
+            "name": "Eli",
+            "link": ""
+        },
+        {
+            "name": "Hale",
+            "link": ""
+        },
+        {
+            "name": "❤️ Ting ❤️",
+            "link": ""
+        },
+        {
+            "name": "",
+            "link": ""
+        },
+        {
+            "name": "",
+            "link": ""
+        },
+        {
+            "name": "",
             "link": ""
         }
     ];
