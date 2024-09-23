@@ -91,15 +91,15 @@ $(document).ready(() => {
             "link": ""
         },
         {
-            "name": "",
+            "name": "Kimbo",
             "link": ""
         },
         {
-            "name": "",
+            "name": "Zix",
             "link": ""
         },
         {
-            "name": "",
+            "name": "❤️❤️ Mia ❤️❤️",
             "link": ""
         }
     ];
