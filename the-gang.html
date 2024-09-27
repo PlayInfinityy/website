@@ -1,360 +1,200 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
     <title>The Gang</title>
-
     <meta charset="UTF-8" />
-
     <meta name="description" content="The Gang - omegatm.wtf" />
-
     <meta name="keywords" content="omegatm.wtf, gang, club, r6, rust, hvh" />
-
     <meta name="author" content="Omega" />
-
     <meta property="og:type" content="site" />
-
     <meta property="og:title" content="The Gang" />
-
     <meta property="og:description" content="The Gang - hack vs hack team" />
-
     <meta property="og:url" content="https://klar.gg" />
-
     <meta property="og:image" content="assets/icons/obnoxious.jpg" />
-
     <meta itemprop="name" content="The Gang" />
-
     <meta itemprop="description" content="The Gang - hack vs hack team" />
-
     <meta itemprop="image" content="assets/icons/obnoxious.jpg" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-
-
     <link rel="shortcut icon" href="assets/icons/obnoxious.jpg" type="image/x-icon" />
-
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/stylesheet.css" />
-
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-
     <style>
-
         .header {
-
             display: flex;
-
             justify-content: center;
-
             background-color: transparent;
-
             padding: 10px 0;
-
         }
-
-
-
-            .header a {
-
-                color: white;
-
-                text-decoration: none;
-
-                padding: 14px 20px;
-
-                transition: background-color 0.3s, transform 0.3s;
-
-            }
-
-
-
-                .header a:hover {
-
-                    background-color: transparent;
-
-                    transform: scale(1.1);
-
-                }
-
-
-
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .header a:hover {
+            background-color: transparent;
+            transform: scale(1.1);
+        }
         .gang-container {
-
             display: flex;
-
             flex-wrap: wrap;
-
             justify-content: center;
-
             gap: 20px;
-
             padding: 20px;
-
         }
-
-
-
         .gang-member {
-
             text-align: center;
-
         }
-
-
-
-            .gang-member img {
-
-                width: 150px;
-
-                height: 150px;
-
-                border-radius: 50%;
-
-                margin-bottom: 10px;
-
-            }
-
-
-
+        .gang-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
         .rainbow-text {
-
             font-size: 18px;
-
             font-weight: bold;
-
             background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-
             -webkit-background-clip: text;
-
             color: transparent;
-
             animation: rainbow 1s infinite;
-
         }
-
-
-
         @keyframes rainbow {
-
             0% {
-
                 filter: hue-rotate(0deg);
-
             }
-
-
-
             100% {
-
                 filter: hue-rotate(360deg);
-
             }
-
         }
-
-
-
         .top-member {
-
             text-align: center;
-
             margin-bottom: 40px;
-
+            position: relative;
         }
-
         .top-member-container {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
-
         .top-member img {
-
             width: 200px;
-
             height: 200px;
-
             border-radius: 50%;
-
             margin-bottom: 10px;
-
         }
-
-
-
         .background {
-
             position: fixed;
-
             top: 0;
-
             left: 0;
-
             width: 100%;
-
             height: 100%;
-
             z-index: -1;
-
             filter: blur(10px);
-
         }
-
-
-
-            .background video {
-
-                width: 100%;
-
-                height: 100%;
-
-                object-fit: cover;
-
-            }
-
+        .background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            z-index: -1;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 50px;
+        }
     </style>
-
 </head>
-
-
-
 <body>
-
     <div class="header">
-
         <a href="index.html">Home</a>
-
     </div>
-
-
-
     <div class="top-member-container">
         <div class="top-member">
+            <div class="heart"></div>
             <img src="assets/images/omega.png" alt="OG">
             <div class="rainbow-text">OmegaTM</div>
         </div>
         <div class="rainbow-text">+</div>
         <div class="top-member">
+            <div class="heart"></div>
             <img src="assets/images/mia.gif" alt="4">
             <div class="rainbow-text">❤️ Mia ❤️</div>
         </div>
     </div>
-
-
-
     <div class="gang-container">
-
         <div class="gang-member">
-
             <img src="assets/images/kimbo.png" alt="1">
-
             <div class="rainbow-text">Bimboington</div>
-
         </div>
-
         <div class="gang-member">
-
             <img src="assets/images/zix.png" alt="2">
-
             <div class="rainbow-text">Zoinksington</div>
-
         </div>
-
         <div class="gang-member">
-
             <img src="assets/images/adam.png" alt="3">
-
             <div class="rainbow-text">GlupGlarpington</div>
-
         </div>
-
         <div class="gang-member">
-
             <img src="assets/images/cami.gif" alt="5">
-
             <div class="rainbow-text">Cami</div>
-
         </div>
-
         <div class="gang-member">
-
             <img src="assets/images/spoit.gif" alt="6">
-
             <div class="rainbow-text">SpittyKittyington</div>
-
         </div>
-
         <div class="gang-member">
-
             <img src="assets/images/solo.png" alt="7">
-
             <div class="rainbow-text">Sololyaington</div>
-
         </div>
-
     </div>
-
-
-
     <div class="background">
-
         <video id="background" loop autoplay muted>
-
             <source src="assets/others/klar.mp4" type="video/mp4" />
-
         </video>
-
     </div>
-
-
-
     <audio id="audio" loop>
-
         <source src="assets/others/dayandnight.mp3" type="audio/mp3" />
-
     </audio>
-
-
-
     <script type="text/javascript" src="assets/javascript/lib/jquery-3.1.1.min.js"></script>
-
     <script type="text/javascript" src="assets/javascript/lib/jquery.marquee.min.js"></script>
-
     <script type="text/javascript" src="assets/javascript/lib/jquery.cookie.min.js"></script>
-
     <script type="text/javascript" src="assets/javascript/lib/typed.min.js"></script>
-
     <script type="text/javascript" src="assets/javascript/portfolio.js"></script>
-
     <script type="text/javascript" src="assets/javascript/analytics.js"></script>
-
     <script>
-
         $(document).ready(() => {
-
             const audio = document.getElementById('audio');
-
             const video = document.getElementById('background');
-
             audio.volume = 0.12;
-
             video.play();
-
             audio.play();
-
             video.addEventListener('timeupdate', () => {
-
                 $.cookie('videoTime', video.currentTime, { expires: 1 });
-
             }, false);
-
         });
-
     </script>
-
 </body>
-
 </html>
