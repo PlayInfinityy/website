@@ -99,7 +99,7 @@ $(document).ready(() => {
             "link": ""
         },
         {
-            "name": "❤️❤️ Mia ❤️❤️",
+            "name": "",
             "link": ""
         }
     ];
