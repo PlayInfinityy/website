@@ -19,63 +19,11 @@ $(document).ready(() => {
             "link": ""
         },
         {
-            "name": "Keaton",
-            "link": ""
-        },
-        {
             "name": "Casper",
             "link": ""
         },
         {
-            "name": "Panda",
-            "link": ""
-        },
-        {
-            "name": "JD",
-            "link": ""
-        },
-        {
-            "name": "Draggo",
-            "link": ""
-        },
-        {
-            "name": "Crspy",
-            "link": ""
-        },
-        {
-            "name": "Cam",
-            "link": ""
-        },
-        {
-            "name": "Blackie",
-            "link": ""
-        },
-        {
-            "name": "Battleye",
-            "link": ""
-        },
-        {
-            "name": "Api",
-            "link": ""
-        },
-        {
-            "name": "",
-            "link": ""
-        },
-        {
-            "name": "Solar",
-            "link": ""
-        },
-        {
-            "name": "Pookie",
-            "link": ""
-        },
-        {
-            "name": "eelipse",
-            "link": ""
-        },
-        {
-            "name": "curqsd",
+            "name": "Keaton",
             "link": ""
         },
         {
@@ -83,23 +31,75 @@ $(document).ready(() => {
             "link": ""
         },
         {
+            "name": "Battleye",
+            "link": ""
+        },
+        {
             "name": "Hale",
             "link": ""
         },
         {
-            "name": "❤️ Ting ❤️",
+            "name": "Panda",
             "link": ""
         },
         {
-            "name": "Kimbo",
+            "name": "Luvly",
             "link": ""
         },
         {
-            "name": "Zix",
+            "name": "Paradox",
             "link": ""
         },
         {
-            "name": "",
+            "name": "Chaqti",
+            "link": ""
+        },
+        {
+            "name": "Crspy",
+            "link": ""
+        },
+        {
+            "name": "Ting",
+            "link": ""
+        },
+        {
+            "name": "Suffixtm",
+            "link": ""
+        },
+        {
+            "name": "Vloxxe",
+            "link": ""
+        },
+        {
+            "name": "Atake",
+            "link": ""
+        },
+        {
+            "name": "Xida",
+            "link": ""
+        },
+        {
+            "name": "Dyno",
+            "link": ""
+        },
+        {
+            "name": "Kiwtty",
+            "link": ""
+        },
+        {
+            "name": "Jake",
+            "link": ""
+        },
+        {
+            "name": "xiffus",
+            "link": ""
+        },
+        {
+            "name": "Onyd",
+            "link": ""
+        },
+        {
+            "name": "Ekaj",
             "link": ""
         }
     ];
