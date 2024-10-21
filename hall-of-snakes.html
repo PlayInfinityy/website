@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hall of Snakes</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Hall of Snakes - omegatm.wtf" />
+    <meta name="keywords" content="omegatm.wtf, snakes, hall of snakes" />
+    <meta name="author" content="Omega" />
+    <meta property="og:type" content="site" />
+    <meta property="og:title" content="Hall of Snakes" />
+    <meta property="og:description" content="Hall of Snakes - omegatm.wtf" />
+    <meta property="og:url" content="https://omegatm.wtf/hall-of-snakes" />
+    <meta property="og:image" content="assets/icons/obnoxious.jpg" />
+    <meta itemprop="name" content="Hall of Snakes" />
+    <meta itemprop="description" content="Hall of Snakes - omegatm.wtf" />
+    <meta itemprop="image" content="assets/icons/obnoxious.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="assets/icons/obnoxious.jpg" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+            padding: 10px 0;
+        }
+
+            .header a {
+                color: white;
+                text-decoration: none;
+                padding: 14px 20px;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+
+                .header a:hover {
+                    background-color: transparent;
+                    transform: scale(1.1);
+                }
+
+        .snake-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .snake-box {
+            width: 200px;
+            height: 310px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #444;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+            .snake-box img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .snake-box:hover img {
+                transform: scale(1.1);
+            }
+
+        .snake-content {
+            height: 100px;
+            overflow-y: auto;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+            .snake-content h3 {
+                color: #ff6600;
+                margin-bottom: 5px;
+            }
+
+            .snake-content p {
+                color: #fff;
+                font-size: 12px;
+                margin: 0;
+            }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(10px);
+        }
+
+            .background video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        #snake-logo {
+            font-family: monospace;
+            white-space: pre;
+            text-align: center;
+            color: #ff6600;
+            font-size: 10px;
+            line-height: 1;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">Home</a>
+    </div>
+    <div id="snake-logo"></div>
+    <div class="snake-container">
+        <div class="snake-box">
+            <img src="assets/images/kimbo.gif" alt="Kimbo">
+            <div class="snake-content">
+                <h3>Kimbo</h3>
+                <p>Self centered pooron on the internet. No respect or boundaries for any friends/social circles. Wants to be a com kid so bad 😅. Ruined a relationship for "fun".</p>
+            </div>
+        </div>
+        <div class="snake-box">
+            <img src="assets/images/zix.png" alt="Zix">
+            <div class="snake-content">
+                <h3>Zix</h3>
+                <p>Kept information about things that revolved around a relationship. Begs for money because like his counterpart kimbo he is also broke.</p>
+            </div>
+        </div>
+        <div class="snake-box">
+            <img src="assets/images/mia.jpg" alt="Mia">
+            <div class="snake-content">
+                <h3>Mia</h3>
+                <p>Got into a relationship just to be manipulated into breaking up due to her boyfriend being "overprotective", "controlling", "misogynistic", In reality maybe he just cared enough to protect from the pit vipers in the group. 🤷 </p>
+            </div>
+        </div>
+    </div>
+    <div class="background">
+        <video id="background" loop autoplay muted>
+            <source src="assets/others/klar.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <audio id="audio" loop>
+        <source src="assets/others/hos.mp3" type="audio/mp3" />
+    </audio>
+    <script type="text/javascript" src="assets/javascript/lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/lib/jquery.marquee.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/lib/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/lib/typed.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/portfolio.js"></script>
+    <script type="text/javascript" src="assets/javascript/analytics.js"></script>
+    <script>
+        document.addEventListener('click', function initAudioPlayback() {
+            app.audioElement.play();
+            app.audioElement.volume = app.musicVolume;
+            document.removeEventListener('click', initAudioPlayback);
+        });
+        $(document).ready(() => {
+            const video = document.getElementById('background');
+            const audio = document.getElementById('audio');
+            app.audioElement = audio;
+            app.audioElement.volume = 0;
+            video.play();
+            video.addEventListener('timeupdate', () => {
+                $.cookie('videoTime', video.currentTime, { expires: 1 });
+            }, false);
+            fetch('assets/snake.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const logoContainer = document.getElementById('snake-logo');
+                    logoContainer.textContent = data;
+                })
+                .catch(error => console.error('Error loading snake logo:', error));
+        });
+    </script>
+</body>
+</html>
