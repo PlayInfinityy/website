@@ -87,8 +87,8 @@ $(document).ready(() => {
             "link": ""
         },
         {
-            "name": "JakeTM",
-            "link": "https://steamcommunity.com/id/vertexsanta"
+            "name": "Jake",
+            "link": ""
         },
         {
             "name": "xiffus",
