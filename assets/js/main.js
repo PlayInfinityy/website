@@ -3,7 +3,7 @@ function decryptWebhook(encryptedHook) {
     return atob(encryptedHook);
 }
 
-const encryptedWebhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMwNTQzNjg3MTg2NTY2MzU0MC81LXhGVms4RVZEQm5mSllSSklaSUkzMU1Od0dGRk44dEh5ZVdlR3N4U0w1c05MWEFyN2FQbGZnd3BRakdyaDRKZ1k0WHE=";
+const encryptedWebhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMwNTQ3MDMyODIwMTU0Nzc4Ni8tOHR0ZWFDbnRTeUpEeUItTG5fSHNYVUJCQUVDODBJalVuQUgyVUQyNjB5LTlkSjIzMDdFVEEzcWZtQVEtR0JGT3NPXw==";
 
 const brandDescription = [
     'pro ragers',
