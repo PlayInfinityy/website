@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .nav-menu {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+            .nav-menu ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .nav-menu a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+
+                .nav-menu a:hover {
+                    background-color: rgba(85, 85, 85, 0.8);
+                }
+
+        .slider-container {
+            position: relative;
+            max-width: 800px;
+            margin: 100px auto;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px;
+            border: 4px solid #fff;
+        }
+
+        .user-info {
+            color: white;
+            margin: 20px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 100;
+            font-size: 24px;
+            color: white;
+            transition: background 0.3s;
+        }
+
+            .arrow:hover {
+                background: rgba(255, 255, 255, 0.5);
+            }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hos.html">About</a></li>
+            <li><a href="hor.html">Hall of Ragers</a></li>
+            <li><a href="https://discord.gg/officialdma" target="_blank">Discord</a></li>
+        </ul>
+    </nav>
+
+    <div class="loading-container">
+        <img src="assets/images/loading.png" class="flashing-logo" alt="Logo">
+    </div>
+
+    <div class="main-page">
+        <video class="background-video" autoplay loop playsinline>
+            <source src="assets/videos/background.mp4" type="video/mp4">
+        </video>
+
+        <audio id="backgroundAudio" autoplay loop>
+            <source src="assets/audio/background.mp3" type="audio/mp3">
+        </audio>
+
+        <div class="slider-container">
+            <div class="slider"></div>
+            <div class="arrow prev">←</div>
+            <div class="arrow next">→</div>
+        </div>
+    </div>
+
+    <script type="module">
+        import ragers from './assets/js/ragerData.js';
+
+        const slider = document.querySelector('.slider');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentSlide = 0;
+
+        ragers.forEach(rager => {
+            slider.innerHTML += `
+                    <div class="slide">
+                        <img src="${rager.image}" alt="${rager.username}" class="profile-image">
+                        <div class="user-info">
+                            <h2>${rager.username}</h2>
+                            <p>Rager since: ${rager.joinDate}</p>
+                            <p>Rank: ${rager.rank}</p>
+                            <p>${rager.description}</p>
+                        </div>
+                    </div>
+                `;
+        });
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + ragers.length) % ragers.length;
+            updateSlider();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % ragers.length;
+            updateSlider();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('click', function () {
+            const audio = document.getElementById('backgroundAudio');
+            audio.play();
+            audio.volume = 0.5;
+        }, { once: true });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
