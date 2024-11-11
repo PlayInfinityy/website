@@ -34,7 +34,7 @@ const ragers = [
     {
         id: 5,
         username: "Iroh",
-        image: "assets/images/ragers/iroh.jpg",
+        image: "assets/images/ragers/iroh.png",
         joinDate: "2023",
         rank: "Platinum Rager",
         description: "Direct Money Acces, Speed ran a 4k account getting banned using klar lite (1d), Brick for a brain, Godcomplex ego"
