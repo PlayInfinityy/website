@@ -29,7 +29,7 @@ const ragers = [
         image: "assets/images/ragers/jake.png",
         joinDate: "2023",
         rank: "Semi-Known Rager",
-        description: "Tinman from wizard of ozz is smarter, Godcomplex ego, Flex's Cardiac Botnet, Xane ddoser, 2nd Fastest Removal From Klar Staff History"
+        description: "Tinman from wizard of ozz is smarter, Godcomplex ego, Flex's Elite Botnet, Xane ddoser, 2nd Fastest Removal From Klar Staff History"
     },
     {
         id: 5,
