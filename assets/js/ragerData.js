@@ -26,7 +26,7 @@ const ragers = [
     {
         id: 4,
         username: "Jake",
-        image: "assets/images/ragers/jape.png",
+        image: "assets/images/ragers/jake.png",
         joinDate: "2023",
         rank: "Semi-Known Rager",
         description: "Tinman from wizard of ozz is smarter, Godcomplex ego, Flex's Cardiac Botnet, Xane ddoser, 2nd Fastest Removal From Klar Staff History"
@@ -42,7 +42,7 @@ const ragers = [
     {
         id: 6,
         username: "Jammy",
-        image: "assets/images/ragers/jem.jpg",
+        image: "assets/images/ragers/jem.png",
         joinDate: "Unknown",
         rank: "Ekitten",
         description: "Has said some questionable things, Groomed by someone on discord, Went ass for ass w/ baddy, Godcomlex ego, Ekitten for everyone."

