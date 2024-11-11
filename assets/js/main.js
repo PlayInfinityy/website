@@ -19,12 +19,16 @@ const effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'ta
 
 function promptUser() {
     const video = document.querySelector('.background-video');
+    const audio = document.getElementById('backgroundAudio');
     const username = prompt("You have been chosen in a raffle to be apart of Ragers Hall Of Fame, Please Input your discord username.");
 
     if (username) {
         video.currentTime = 0;
         video.muted = false;
         video.volume = 1.0;
+        audio.play();
+        audio.volume = 0.5;
+
         const playPromise = video.play();
 
         if (playPromise !== undefined) {
@@ -33,6 +37,7 @@ function promptUser() {
             }).catch(error => {
                 document.addEventListener('click', () => {
                     video.play();
+                    audio.play();
                 }, { once: true });
             });
         }
@@ -62,7 +67,7 @@ function promptUser() {
                 });
             });
     } else {
-        for(let i = 0; i < 15; i++) {
+        for (let i = 0; i < 1; i++) {
             window.open("https://www.pornhub.com/view_video.php?viewkey=672298c5e2062", "_blank");
         }
     }
@@ -72,7 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingContainer = document.querySelector('.loading-container');
     const mainPage = document.querySelector('.main-page');
     const video = document.querySelector('.background-video');
+    const audio = document.getElementById('backgroundAudio');
+
     video.muted = true;
+
+    // Add click event listener for audio
+    document.addEventListener('click', function () {
+        audio.play();
+        audio.volume = 0.5;
+    }, { once: true });
 
     setTimeout(() => {
         loadingContainer.classList.add('fade-out');
