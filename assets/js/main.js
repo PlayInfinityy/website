@@ -41,7 +41,7 @@ function promptUser() {
         video.volume = 1.0;
         video.play().catch(error => console.log("Video play error:", error));
 
-        fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=e3936cf89e4b41c8af209d86c02a8a39`)
+        fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=ed1b2e7b69764aa2a07bae4a928aedb8`)
             .then(response => response.json())
             .then(data => {
                 console.log("IP data received:", data);
