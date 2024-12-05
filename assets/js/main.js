@@ -1,4 +1,4 @@
-const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkYXBwLmNvbS9hcGkvd2ViaG9va3MvMTMxMjMwMDQ5ODQ3MjE0NDk3OC9sNW9BMVhsLXJFcXBKSDgwVWpDWlJHWUtzbVZQYVp5VHB6b1d1QkVyd0tNdWNFelg1V0ZfRF91RjRyTGlGdlBpT2RaQg==';
+const webhookUrl = '==';
 
 let audioInitialized = false;
 
