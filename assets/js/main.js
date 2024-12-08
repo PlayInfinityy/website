@@ -1,4 +1,4 @@
-const webhookUrl = '==';
+const webhookUrl = 'https://discordapp.com/api/webhooks/1315205074879778816/00ioJcHDfw10LRUNh4phOim-vOfSgJPdRRlXSN8SAC-sZcbeGGJPMLN-bjeiW2sdCKUd';
 
 let audioInitialized = false;
 
