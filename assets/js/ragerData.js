@@ -37,7 +37,7 @@ const ragers = [
         image: "assets/images/ragers/mikey.png",
         joinDate: "2024",
         rank: "Rager",
-        description: "Scottish Rager, Suffix is grooming him, Best Gaslighter of 2025."
+        description: "Irish Rager, Suffix is grooming him, Best Gaslighter of 2025."
     },
     {
         id: 6,
