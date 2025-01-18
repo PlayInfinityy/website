@@ -26,15 +26,15 @@ const ragers = [
     {
         id: 4,
         username: "Net",
-        image: "assets/images/ragers/mikey.png",
+        image: "assets/images/ragers/net.png",
         joinDate: "2024",
         rank: "Pro Developer",
         description: "Development work for the best rainbow six siege cheat to ever touch the market, Omega's E-Kitten, Wanted by Ubisoft."
     },
     {
         id: 5,
-        username: "N1K3Y",
-        image: "assets/images/ragers/net.png",
+        username: "M1K3Y",
+        image: "assets/images/ragers/mikey.png",
         joinDate: "2024",
         rank: "Rager",
         description: "Scottish Rager, Suffix is grooming him, Best Gaslighter of 2025."
