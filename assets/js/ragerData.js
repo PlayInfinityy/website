@@ -35,9 +35,9 @@ const ragers = [
         id: 5,
         username: "M1K3Y",
         image: "assets/images/ragers/mikey.png",
-        joinDate: "2023",
+        joinDate: "2024",
         rank: "Rager",
-        description: "Irish Rager, Suffix is grooming him, Best Gaslighter of 2025."
+        description: "Scottish Rager, Suffix is grooming him, Best Gaslighter of 2025."
     },
     {
         id: 6,
@@ -61,6 +61,6 @@ const ragers = [
         image: "assets/images/ragers/yunny.png",
         joinDate: "2025",
         rank: "DMA Rager",
-        description: "Banned while using DMA, Touche's Minors ( literally ), Said he was going to touch a mil in 2025."
+        description: "Actual Pedophile, Got a 13yr to such a didlo on ome.tv, Banned with DMA card ( 0.01% to get banned w/ one btw )"
     }
 ];
