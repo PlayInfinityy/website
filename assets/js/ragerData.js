@@ -54,7 +54,13 @@ const ragers = [
         joinDate: "2024",
         rank: "Daddy Dyno",
         description: "Has said some questionable things, Direct Money Access, Used to be a clean player, Brick for a brain, Godcomplex ego"
+    },
+    {
+        id: 8,
+        username: "Yunny",
+        image: "assets/images/ragers/yunny.png",
+        joinDate: "2025",
+        rank: "DMA Rager",
+        description: "Banned while using DMA, Touche's Minors ( literally ), Said he was going to touch a mil in 2025."
     }
 ];
-
-export default ragers;
